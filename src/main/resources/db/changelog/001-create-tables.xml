@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Création de la table CASERNE -->
+    <changeSet id="1-create-caserne" author="Clément">
+        <createTable tableName="CASERNE">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nom" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coordonnee_x" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coordonnee_y" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Création de la table CAMION -->
+    <changeSet id="2-create-camion" author="Clément">
+        <createTable tableName="CAMION">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="capacite" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vitesse" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coordonnee_x" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coordonnee_y" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="statut" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="caserne_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Clé étrangère pour associer un camion à une caserne -->
+        <addForeignKeyConstraint baseTableName="CAMION"
+                                 baseColumnNames="caserne_id"
+                                 constraintName="fk_camion_caserne"
+                                 referencedTableName="CASERNE"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <!-- Création de la table POMPIER -->
+    <changeSet id="3-create-pompier" author="Clément">
+        <createTable tableName="POMPIER">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nom" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="prenom" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="statut" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="caserne_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Clé étrangère pour associer un pompier à une caserne -->
+        <addForeignKeyConstraint baseTableName="POMPIER"
+                                 baseColumnNames="caserne_id"
+                                 constraintName="fk_pompier_caserne"
+                                 referencedTableName="CASERNE"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <!-- Création de la table CAPTEUR -->
+    <changeSet id="4-create-capteur" author="Clément">
+        <createTable tableName="CAPTEUR">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="coordonnee_x" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coordonnee_y" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="temperature" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="portee" type="INT" defaultValueNumeric="500">
+                <constraints nullable="false"/>
+            </column>
+            <column name="etat" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Création de la table FEU_DETECTE -->
+    <changeSet id="5-create-feu-detecte" author="Clément">
+        <createTable tableName="FEU_DETECTE">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="coordonnee_x" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="coordonnee_y" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="intensite" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="statut_feu" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_apparition" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_extinction" type="TIMESTAMP"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Création de la table FLOTTE -->
+    <changeSet id="6-create-flotte" author="Clément">
+        <createTable tableName="FLOTTE">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="id_caserne" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_feu" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_depart" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_arrivee" type="TIMESTAMP"/>
+        </createTable>
+
+        <!-- Clés étrangères -->
+        <addForeignKeyConstraint baseTableName="FLOTTE"
+                                 baseColumnNames="id_caserne"
+                                 constraintName="fk_flotte_caserne"
+                                 referencedTableName="CASERNE"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="FLOTTE"
+                                 baseColumnNames="id_feu"
+                                 constraintName="fk_flotte_feu"
+                                 referencedTableName="FEU_DETECTE"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <!-- Création de la table CAMION_POMPIER -->
+    <changeSet id="7-create-camion-pompier" author="Clément">
+        <createTable tableName="CAMION_POMPIER">
+            <column name="camion_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pompier_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Clé étrangère pour associer un pompier à un camion -->
+        <addForeignKeyConstraint baseTableName="CAMION_POMPIER"
+                                 baseColumnNames="camion_id"
+                                 constraintName="fk_camion_pompier_camion"
+                                 referencedTableName="CAMION"
+                                 referencedColumnNames="id"/>
+
+        <!-- Clé étrangère pour associer un camion à un pompier -->
+        <addForeignKeyConstraint baseTableName="CAMION_POMPIER"
+                                 baseColumnNames="pompier_id"
+                                 constraintName="fk_camion_pompier_pompier"
+                                 referencedTableName="POMPIER"
+                                 referencedColumnNames="id"/>
+
+        <!-- Contrainte d'unicité pour éviter les doublons -->
+        <addUniqueConstraint tableName="CAMION_POMPIER"
+                             columnNames="camion_id,pompier_id"
+                             constraintName="unique_camion_pompier"/>
+    </changeSet>
+
+    <changeSet id="8-create-flotte-camion" author="Clément">
+        <createTable tableName="flotte_camion">
+            <column name="flotte_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="camion_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Clés étrangères -->
+        <addForeignKeyConstraint baseTableName="flotte_camion"
+                                 baseColumnNames="flotte_id"
+                                 constraintName="fk_flotte_camion_flotte"
+                                 referencedTableName="flotte"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="flotte_camion"
+                                    baseColumnNames="camion_id"
+                                    constraintName="fk_flotte_camion_camion"
+                                    referencedTableName="camion"
+                                    referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="1-add-casernes" author="Clément">
+        <insert tableName="caserne">
+            <column name="id" value="1"/>
+            <column name="nom" value="Caserne de Lyon-Confluence"/>
+            <column name="coordonnee_x" value="4.82580945495536"/>
+            <column name="coordonnee_y" value="45.74713624641966"/>
+        </insert>
+        <insert tableName="caserne">
+            <column name="id" value="2"/>
+            <column name="nom" value="Caserne de Lyon-Croix-Rousse"/>
+            <column name="coordonnee_x" value="4.8214231614835406"/>
+            <column name="coordonnee_y" value="45.78426417127149"/>
+        </insert>
+        <insert tableName="caserne">
+            <column name="id" value="3"/>
+            <column name="nom" value="Caserne de Lyon-Gerland"/>
+            <column name="coordonnee_x" value="4.828066266593021"/>
+            <column name="coordonnee_y" value="45.73221261557295"/>
+        </insert>
+        <insert tableName="caserne">
+            <column name="id" value="4"/>
+            <column name="nom" value="Caserne de Lyon-Montchat"/>
+            <column name="coordonnee_x" value="4.833044282103321"/>
+            <column name="coordonnee_y" value="45.73279477738859"/>
+        </insert>
+        <insert tableName="caserne">
+            <column name="id" value="5"/>
+            <column name="nom" value="Caserne de Lyon 3"/>
+            <column name="coordonnee_x" value="4.843877630090085"/>
+            <column name="coordonnee_y" value="45.76320683763977"/>
+        </insert>
+        <insert tableName="caserne">
+            <column name="id" value="6"/>
+            <column name="nom" value="Caserne de Lyon 5"/>
+            <column name="coordonnee_x" value="4.781321866790814"/>
+            <column name="coordonnee_y" value="45.759899940193016"/>
+        </insert>
+        <insert tableName="caserne">
+            <column name="id" value="7"/>
+            <column name="nom" value="Caserne de Lyon-Duchère"/>
+            <column name="coordonnee_x" value="4.798278809225133"/>
+            <column name="coordonnee_y" value="45.79300807960958"/>
+        </insert>
+        <insert tableName="caserne">
+            <column name="id" value="8"/>
+            <column name="nom" value="Caserne de Lyon Rochat"/>
+            <column name="coordonnee_x" value="4.848918915483147"/>
+            <column name="coordonnee_y" value="45.752897057549625"/>
+        </insert>
+        <insert tableName="caserne">
+            <column name="id" value="9"/>
+            <column name="nom" value="Caserne de Lyon-Villeurbanne"/>
+            <column name="coordonnee_x" value="4.878832797880617"/>
+            <column name="coordonnee_y" value="45.781632195031044"/>
+        </insert>
+    </changeSet>
+    <changeSet id="2-add-pompiers" author="Clément">
+        <!-- Pompiers de la caserne 1 -->
+        <insert tableName="pompier">
+            <column name="id" value="1"/>
+            <column name="nom" value="Durand"/>
+            <column name="prenom" value="Jean"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="2"/>
+            <column name="nom" value="Dupont"/>
+            <column name="prenom" value="Marie"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="3"/>
+            <column name="nom" value="Skywalker"/>
+            <column name="prenom" value="Anakin"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="4"/>
+            <column name="nom" value="Skywalker"/>
+            <column name="prenom" value="Luke"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="5"/>
+            <column name="nom" value="Organa"/>
+            <column name="prenom" value="Leia"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="6"/>
+            <column name="nom" value="Solo"/>
+            <column name="prenom" value="Han"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="7"/>
+            <column name="nom" value="Kenobi"/>
+            <column name="prenom" value="Obi-Wan"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="8"/>
+            <column name="nom" value="Windu"/>
+            <column name="prenom" value="Mace"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="9"/>
+            <column name="nom" value="Fett"/>
+            <column name="prenom" value="Boba"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="10"/>
+            <column name="nom" value="Fett"/>
+            <column name="prenom" value="Jango"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <!-- Pompiers de la caserne 2 -->
+        <insert tableName="pompier">
+            <column name="id" value="11"/>
+            <column name="nom" value="Martin"/>
+            <column name="prenom" value="Paul"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="12"/>
+            <column name="nom" value="Bernard"/>
+            <column name="prenom" value="Sophie"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="13"/>
+            <column name="nom" value="Stark"/>
+            <column name="prenom" value="Tony"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="14"/>
+            <column name="nom" value="Rogers"/>
+            <column name="prenom" value="Steve"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="15"/>
+            <column name="nom" value="Banner"/>
+            <column name="prenom" value="Bruce"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="16"/>
+            <column name="nom" value="Romanoff"/>
+            <column name="prenom" value="Natasha"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="17"/>
+            <column name="nom" value="Barton"/>
+            <column name="prenom" value="Clint"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="18"/>
+            <column name="nom" value="Odinson"/>
+            <column name="prenom" value="Thor"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="19"/>
+            <column name="nom" value="Laufeyson"/>
+            <column name="prenom" value="Loki"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="20"/>
+            <column name="nom" value="Parker"/>
+            <column name="prenom" value="Peter"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <!-- Pompiers de la caserne 3 -->
+        <insert tableName="pompier">
+            <column name="id" value="21"/>
+            <column name="nom" value="White"/>
+            <column name="prenom" value="Walter"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="22"/>
+            <column name="nom" value="Pinkman"/>
+            <column name="prenom" value="Jesse"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="23"/>
+            <column name="nom" value="Goodman"/>
+            <column name="prenom" value="Saul"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="24"/>
+            <column name="nom" value="Ehrmantraut"/>
+            <column name="prenom" value="Mike"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="25"/>
+            <column name="nom" value="Frings"/>
+            <column name="prenom" value="Gustavo"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="26"/>
+            <column name="nom" value="Schrader"/>
+            <column name="prenom" value="Hank"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="27"/>
+            <column name="nom" value="White"/>
+            <column name="prenom" value="Skyler"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="28"/>
+            <column name="nom" value="Pinkman"/>
+            <column name="prenom" value="Jane"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="29"/>
+            <column name="nom" value="Goodman"/>
+            <column name="prenom" value="Kim"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="30"/>
+            <column name="nom" value="Ehrmantraut"/>
+            <column name="prenom" value="Stacey"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <!-- Pompiers de la caserne 4 -->
+        <insert tableName="pompier">
+            <column name="id" value="31"/>
+            <column name="nom" value="Croft"/>
+            <column name="prenom" value="Lara"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="32"/>
+            <column name="nom" value="Drake"/>
+            <column name="prenom" value="Nathan"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="33"/>
+            <column name="nom" value="Croft"/>
+            <column name="prenom" value="Richard"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="34"/>
+            <column name="nom" value="Drake"/>
+            <column name="prenom" value="Samuel"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="35"/>
+            <column name="nom" value="Croft"/>
+            <column name="prenom" value="Konstantin"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="36"/>
+            <column name="nom" value="Drake"/>
+            <column name="prenom" value="Elena"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="37"/>
+            <column name="nom" value="Jonnes"/>
+            <column name="prenom" value="Indiana"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="38"/>
+            <column name="nom" value="Croft"/>
+            <column name="prenom" value="Konstantin"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="39"/>
+            <column name="nom" value="Maiava"/>
+            <column name="prenom" value="Jonah"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="40"/>
+            <column name="nom" value="Jones"/>
+            <column name="prenom" value="Henry"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <!-- Pompiers de la caserne 5 -->
+        <insert tableName="pompier">
+            <column name="id" value="41"/>
+            <column name="nom" value="Potter"/>
+            <column name="prenom" value="Harry"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="42"/>
+            <column name="nom" value="Granger"/>
+            <column name="prenom" value="Hermione"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="43"/>
+            <column name="nom" value="Weasley"/>
+            <column name="prenom" value="Ron"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="44"/>
+            <column name="nom" value="Dumbledore"/>
+            <column name="prenom" value="Albus"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="45"/>
+            <column name="nom" value="Snape"/>
+            <column name="prenom" value="Severus"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="46"/>
+            <column name="nom" value="Malfoy"/>
+            <column name="prenom" value="Draco"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="47"/>
+            <column name="nom" value="Hagrid"/>
+            <column name="prenom" value="Rubeus"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="48"/>
+            <column name="nom" value="Black"/>
+            <column name="prenom" value="Sirius"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="49"/>
+            <column name="nom" value="Lupin"/>
+            <column name="prenom" value="Remus"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="50"/>
+            <column name="nom" value="Potter"/>
+            <column name="prenom" value="James"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <!-- Pompiers de la caserne 6 -->
+        <insert tableName="pompier">
+            <column name="id" value="51"/>
+            <column name="nom" value="West"/>
+            <column name="prenom" value="Kanye"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="52"/>
+            <column name="nom" value="Carter"/>
+            <column name="prenom" value="Beyoncé"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="53"/>
+            <column name="nom" value="Jackson"/>
+            <column name="prenom" value="Michael"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="54"/>
+            <column name="nom" value="Houston"/>
+            <column name="prenom" value="Whitney"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="55"/>
+            <column name="nom" value="Cobain"/>
+            <column name="prenom" value="Kurt"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="56"/>
+            <column name="nom" value="Hendrix"/>
+            <column name="prenom" value="Jimi"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="57"/>
+            <column name="nom" value="Presley"/>
+            <column name="prenom" value="Elvis"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="58"/>
+            <column name="nom" value="Onfroy"/>
+            <column name="prenom" value="Jahseh"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="59"/>
+            <column name="nom" value="Marley"/>
+            <column name="prenom" value="Bob"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="60"/>
+            <column name="nom" value="Harrison"/>
+            <column name="prenom" value="George"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <!-- Pompiers de la caserne 7 -->
+        <insert tableName="pompier">
+            <column name="id" value="61"/>
+            <column name="nom" value="Zidane"/>
+            <column name="prenom" value="Zinedine"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="62"/>
+            <column name="nom" value="Pogba"/>
+            <column name="prenom" value="Paul"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="63"/>
+            <column name="nom" value="Mbappé"/>
+            <column name="prenom" value="Kylian"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="64"/>
+            <column name="nom" value="Griezmann"/>
+            <column name="prenom" value="Antoine"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="65"/>
+            <column name="nom" value="Kanté"/>
+            <column name="prenom" value="N'Golo"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="66"/>
+            <column name="nom" value="Varane"/>
+            <column name="prenom" value="Raphaël"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="67"/>
+            <column name="nom" value="Lloris"/>
+            <column name="prenom" value="Hugo"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="68"/>
+            <column name="nom" value="Mandanda"/>
+            <column name="prenom" value="Steve"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="69"/>
+            <column name="nom" value="Giroud"/>
+            <column name="prenom" value="Olivier"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="70"/>
+            <column name="nom" value="Laporte"/>
+            <column name="prenom" value="Aymeric"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <!-- Pompiers de la caserne 8 -->
+        <insert tableName="pompier">
+            <column name="id" value="71"/>
+            <column name="nom" value="Gates"/>
+            <column name="prenom" value="Bill"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="72"/>
+            <column name="nom" value="Jobs"/>
+            <column name="prenom" value="Steve"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="73"/>
+            <column name="nom" value="Zuckerberg"/>
+            <column name="prenom" value="Mark"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="74"/>
+            <column name="nom" value="Bezos"/>
+            <column name="prenom" value="Jeff"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="75"/>
+            <column name="nom" value="Musk"/>
+            <column name="prenom" value="Elon"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="76"/>
+            <column name="nom" value="Gates"/>
+            <column name="prenom" value="Melinda"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="77"/>
+            <column name="nom" value="Jobs"/>
+            <column name="prenom" value="Laurene"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="78"/>
+            <column name="nom" value="Einstein"/>
+            <column name="prenom" value="Albert"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="79"/>
+            <column name="nom" value="Curie"/>
+            <column name="prenom" value="Marie"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="80"/>
+            <column name="nom" value="Newton"/>
+            <column name="prenom" value="Isaac"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <!-- Pompiers de la caserne 9 -->
+        <insert tableName="pompier">
+            <column name="id" value="81"/>
+            <column name="nom" value="Yeager"/>
+            <column name="prenom" value="Eren"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="82"/>
+            <column name="nom" value="Ackerman"/>
+            <column name="prenom" value="Mikasa"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="83"/>
+            <column name="nom" value="Yeager"/>
+            <column name="prenom" value="Grisha"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="84"/>
+            <column name="nom" value="Ackerman"/>
+            <column name="prenom" value="Levi"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="85"/>
+            <column name="nom" value="Yeager"/>
+            <column name="prenom" value="Zeke"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="86"/>
+            <column name="nom" value="Ackerman"/>
+            <column name="prenom" value="Kenny"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="87"/>
+            <column name="nom" value="Yeager"/>
+            <column name="prenom" value="Carla"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="88"/>
+            <column name="nom" value="Ackerman"/>
+            <column name="prenom" value="Kuchel"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="89"/>
+            <column name="nom" value="Arlet"/>
+            <column name="prenom" value="Armin"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="pompier">
+            <column name="id" value="90"/>
+            <column name="nom" value="Springer"/>
+            <column name="prenom" value="Connie"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+
+        <!-- Ajoutez plus de pompiers si nécessaire -->
+    </changeSet>
+
+    <changeSet id="3-add-camions" author="Clément">
+        <!-- Insertion des camions associés aux casernes -->
+        <insert tableName="camion">
+            <column name="id" value="1"/>
+            <column name="capacite" value="6"/>
+            <column name="vitesse" value="60"/>
+            <column name="coordonnee_x" value="4.82580945495536"/>
+            <column name="coordonnee_y" value="45.74713624641966"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="2"/>
+            <column name="capacite" value="6"/>
+            <column name="vitesse" value="60"/>
+            <column name="coordonnee_x" value="4.82580945495536"/>
+            <column name="coordonnee_y" value="45.74713624641966"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="1"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="3"/>
+            <column name="capacite" value="8"/>
+            <column name="vitesse" value="70"/>
+            <column name="coordonnee_x" value="4.8214231614835406"/>
+            <column name="coordonnee_y" value="45.78426417127149"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="4"/>
+            <column name="capacite" value="8"/>
+            <column name="vitesse" value="70"/>
+            <column name="coordonnee_x" value="4.8214231614835406"/>
+            <column name="coordonnee_y" value="45.78426417127149"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="2"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="5"/>
+            <column name="capacite" value="10"/>
+            <column name="vitesse" value="80"/>
+            <column name="coordonnee_x" value="4.828066266593021"/>
+            <column name="coordonnee_y" value="45.73221261557295"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="6"/>
+            <column name="capacite" value="10"/>
+            <column name="vitesse" value="80"/>
+            <column name="coordonnee_x" value="4.828066266593021"/>
+            <column name="coordonnee_y" value="45.73221261557295"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="3"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="7"/>
+            <column name="capacite" value="12"/>
+            <column name="vitesse" value="90"/>
+            <column name="coordonnee_x" value="4.833044282103321"/>
+            <column name="coordonnee_y" value="45.73279477738859"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="8"/>
+            <column name="capacite" value="12"/>
+            <column name="vitesse" value="90"/>
+            <column name="coordonnee_x" value="4.833044282103321"/>
+            <column name="coordonnee_y" value="45.73279477738859"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="4"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="9"/>
+            <column name="capacite" value="14"/>
+            <column name="vitesse" value="100"/>
+            <column name="coordonnee_x" value="4.843877630090085"/>
+            <column name="coordonnee_y" value="45.76320683763977"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="10"/>
+            <column name="capacite" value="14"/>
+            <column name="vitesse" value="100"/>
+            <column name="coordonnee_x" value="4.843877630090085"/>
+            <column name="coordonnee_y" value="45.76320683763977"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="5"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="11"/>
+            <column name="capacite" value="16"/>
+            <column name="vitesse" value="110"/>
+            <column name="coordonnee_x" value="4.781321866790814"/>
+            <column name="coordonnee_y" value="45.759899940193016"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="12"/>
+            <column name="capacite" value="16"/>
+            <column name="vitesse" value="110"/>
+            <column name="coordonnee_x" value="4.781321866790814"/>
+            <column name="coordonnee_y" value="45.759899940193016"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="6"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="13"/>
+            <column name="capacite" value="18"/>
+            <column name="vitesse" value="120"/>
+            <column name="coordonnee_x" value="4.798278809225133"/>
+            <column name="coordonnee_y" value="45.79300807960958"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="14"/>
+            <column name="capacite" value="18"/>
+            <column name="vitesse" value="120"/>
+            <column name="coordonnee_x" value="4.798278809225133"/>
+            <column name="coordonnee_y" value="45.79300807960958"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="7"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="15"/>
+            <column name="capacite" value="20"/>
+            <column name="vitesse" value="130"/>
+            <column name="coordonnee_x" value="4.848918915483147"/>
+            <column name="coordonnee_y" value="45.752897057549625"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="16"/>
+            <column name="capacite" value="20"/>
+            <column name="vitesse" value="130"/>
+            <column name="coordonnee_x" value="4.848918915483147"/>
+            <column name="coordonnee_y" value="45.752897057549625"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="8"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="17"/>
+            <column name="capacite" value="22"/>
+            <column name="vitesse" value="140"/>
+            <column name="coordonnee_x" value="4.878832797880617"/>
+            <column name="coordonnee_y" value="45.781632195031044"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <insert tableName="camion">
+            <column name="id" value="18"/>
+            <column name="capacite" value="22"/>
+            <column name="vitesse" value="140"/>
+            <column name="coordonnee_x" value="4.878832797880617"/>
+            <column name="coordonnee_y" value="45.781632195031044"/>
+            <column name="statut" value="DISPONIBLE"/>
+            <column name="caserne_id" value="9"/>
+        </insert>
+        <!-- Ajoutez plus de camions si nécessaire -->
+    </changeSet>
+
+
+</databaseChangeLog>
